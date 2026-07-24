@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Tela onde os frames do jogo são renderizados -->
+    <com.gbemu.app.GameView
+        android:id="@+id/gameView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/controlsArea" />
+
+    <!-- Área inferior com todos os controles virtuais -->
+    <RelativeLayout
+        android:id="@+id/controlsArea"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignParentBottom="true"
+        android:background="#1B1B1F"
+        android:padding="12dp">
+
+        <!-- D-Pad (esquerda) -->
+        <RelativeLayout
+            android:id="@+id/dpad"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true">
+
+            <Button
+                android:id="@+id/btnUp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="▲" />
+
+            <Button
+                android:id="@+id/btnDown"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="▼" />
+
+            <Button
+                android:id="@+id/btnLeft"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="◀" />
+
+            <Button
+                android:id="@+id/btnRight"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="▶" />
+        </RelativeLayout>
+
+        <!-- Botão central: abre o menu de Save/Load -->
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:text="☰"
+            android:textSize="20sp" />
+
+        <!-- Botões A/B (direita) -->
+        <RelativeLayout
+            android:id="@+id/actionButtons"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <Button
+                android:id="@+id/btnA"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:text="A" />
+
+            <Button
+                android:id="@+id/btnB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:text="B" />
+        </RelativeLayout>
+
+        <!-- Start/Select (parte inferior central) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSelect"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="10sp"
+                android:text="SELECT" />
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:textSize="10sp"
+                android:text="START" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
