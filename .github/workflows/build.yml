@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: gbemu
+
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -19,7 +23,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Instalar Gradle e gerar o wrapper
+      - name: Instalar Gradle
         uses: gradle/actions/setup-gradle@v3
 
       - name: Gerar gradlew
@@ -32,4 +36,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: gbemu/app/build/outputs/apk/debug/*.apk
